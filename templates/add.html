@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="container">
+    <form method="POST">
+        <h2>ToDo</h2>
+                <h3 style="color: red">{{error}}</h3>
+                content: <input name="content">
+            <input type="submit" name="submit" value="Add todo">
+    </form>
+</div>
+{% endblock %}

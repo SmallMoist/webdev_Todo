@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+
+        <h1> Todo List</h1>
+
+            {% if user %}
+             Welcome, {{user}}
+            {% endif %}
+            <br/>
+            <a class="button" href="/add">Add todo</a>
+            <a class="button" href="/logoff">Log-Off</a>
+            <ul>
+                {% for todo in todos %}
+                <li>
+                    {% if todo['completed']%}
+                        <p style="text-decoration: line-through;">
+                            {{todo['content']}}
+                        </p>
+                    <a href="{{ '/todos/notcomplete/%s'%todo.id }}"> Undo </a> - 
+                    {% else %}
+                     {{todo['content']}}
+                     <br/>
+                    <a href="{{ '/todos/complete/%s'%todo.id }}"> Mark Done </a> - 
+                    {% endif %}
+                    <a href="{{ '/todos/delete/%s'%todo.id }}"> X </a>
+                </li>
+                {% endfor %}
+
+</div>
+
+{% endblock %}
