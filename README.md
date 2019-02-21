@@ -1,4 +1,3 @@
 # Todo app
-
-todo app for practical web development class
+Project 1 V1 for Web Dev class
 
